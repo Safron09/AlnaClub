@@ -1,2 +1,0 @@
-# AlnaClub
-AlnaClub Project
