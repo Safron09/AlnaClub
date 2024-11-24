@@ -1,38 +1,16 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Header</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        /* Custom CSS for Header */
-        .navbar {
-            background-color: #000; /* Black background */
-        }
-        .navbar-brand {
-            color: #f7c948; /* Gold color */
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
-        .navbar-nav .nav-link {
-            color: white;
-        }
-        .navbar-nav .nav-link:hover {
-            color: #f7c948; /* Gold color on hover */
-        }
-        .btn-custom {
-            background-color: #f7c948; /* Gold button */
-            color: black;
-            font-weight: bold;
-        }
-        .btn-custom:hover {
-            background-color: #d4a12a; /* Darker gold */
-            color: white;
-        }
-    </style>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}ALNA CLUB{% endblock %}</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+        <!-- Custom Styles -->
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    </head>
 <body>
     <!-- Header/Navbar -->
     <nav class="navbar navbar-expand-lg">
@@ -41,7 +19,7 @@
             <a class="navbar-brand" href="{% url 'home' %}">ALNA CLUB</a>
             <!-- Hamburger Menu for Small Devices -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon" style="color: white;"></span>
+                <span class="navbar-toggler-icon" style="color: rgb(238, 188, 8);"></span>
             </button>
             <!-- Navigation Links -->
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -65,8 +43,62 @@
             </div>
         </div>
     </nav>
+    <div class="container my-5">
+        {% block content %}
+        {% endblock %}  
+    </div>
+    <!-- Footer -->
+    <footer class="mt-auto">
+        <!-- Black Section -->
+        <div class="py-5" style="background-color: #111; color: #e0e0e0;">
+            <div class="container">
+                <div class="row">
+                    <!-- Placeholder/Logo Section -->
+                    <div class="col-md-3">
+                        <h5 style="color: #f7c948;">ALNA CLUB</h5>
+                    </div>
 
-    <!-- Add this Bootstrap JS for the menu toggle on mobile -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+                    <!-- Product Links -->
+                    <div class="col-md-2">
+                        <h6 style="color: #f7c948;">Product</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="{% url 'faq' %}" class="text-decoration-none text-light">FAQs</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Company Links -->
+                    <div class="col-md-2">
+                        <h6 style="color: #f7c948;">Company</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="{% url 'our_story' %}" class="text-decoration-none text-light">Our Story</a></li>
+                            <li><a href="{% url 'team' %}" class="text-decoration-none text-light">Team</a></li>
+                            <li><a href="{% url 'contact_us' %}" class="text-decoration-none text-light">Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Legal Links -->
+                    <div class="col-md-3">
+                        <h6 style="color: #f7c948;">Legal</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="{% url 'terms_of_service' %}" class="text-decoration-none text-light">Terms of Service</a></li>
+                            <li><a href="{% url 'privacy_policy' %}" class="text-decoration-none text-light">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Golden Stripe Section -->
+        <div class="py-3" style="background-color: #f7c948; color: black;">
+            <div class="container d-flex justify-content-between align-items-center">
+                <span>&copy; 2024 Alna LLC. All Rights Reserved.</span>
+                <div>
+                    <!-- Social Media Icons -->
+                    <a href="https://facebook.com" class="text-white me-3" style="font-size: 1.5rem;"><i class="bi bi-facebook"></i></a>
+                    <a href="https://linkedin.com" class="text-black me-3" style="font-size: 1.5rem;"><i class="bi bi-linkedin"></i></a>
+                    <a href="https://twitter.com" class="text-black me-3" style="font-size: 1.5rem;"><i class="bi bi-twitter"></i></a>
+                    <a href="https://youtube.com" class="text-black" style="font-size: 1.5rem;"><i class="bi bi-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
