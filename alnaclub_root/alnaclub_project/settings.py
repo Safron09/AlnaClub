@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'landing_page',
+    'authorization_app',
     'crispy_forms',
     'crispy_bootstrap5',
 ]
@@ -69,7 +70,16 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'alnaclub_project.wsgi.application'
 
-
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': env('DJANGO_DB_NAME'),
+        'USER': env('DJANGO_DB_USER'),
+        'PASSWORD': env('DJANGO_DB_PASSWORD'),
+        'HOST': env('DJANGO_DB_HOST'),
+        'PORT': env('DJANGO_DB_PORT'),
+    }
+}
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
@@ -80,17 +90,17 @@ WSGI_APPLICATION = 'alnaclub_project.wsgi.application'
 #     }
 # }
 
-if os.getenv('DATABASE_URL'):
-    DATABASES = {
-        'default': dj_database_url.config()
-    }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }
+# if os.getenv('DATABASE_URL'):
+#     DATABASES = {
+#         'default': dj_database_url.config()
+#     }
+# else:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#         }
+#     }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -135,3 +145,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
+AUTH_USER_MODEL = 'authorization_app.InvestorAuthUser'
