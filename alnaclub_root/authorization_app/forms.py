@@ -8,8 +8,8 @@ class InvestorAuthUserCreationForm(UserCreationForm):
         ('Developer', 'Developer'),
         ('Dual', 'Dual'),
     ]
-    
-    role = forms.ChoiceField(choices=ROLE_CHOICES, required=True, label="User Role") 
+
+    role = forms.ChoiceField(choices=ROLE_CHOICES, required=True, label="User Role")
     name = forms.CharField(required=True)
     last_name = forms.CharField(required=True)
     company_name = forms.CharField(required=False)  # Optional
@@ -17,10 +17,10 @@ class InvestorAuthUserCreationForm(UserCreationForm):
     phone_number = forms.CharField(required=True)
     address = forms.CharField(widget=forms.Textarea, required=True)
     occupation = forms.CharField(required=False)  # Optional
-    ready_to_invest = forms.DecimalField(required=True, max_digits=12, decimal_places=2)
+    ready_to_invest = forms.DecimalField(required=False, max_digits=12, decimal_places=2)
     return_goals = forms.CharField(widget=forms.Textarea, required=False)  # Optional
     projects_done = forms.IntegerField(required=False)
-    ssn = forms.CharField(required=True)
+    ssn = forms.CharField(required=False)
 
     class Meta:
         model = InvestorAuthUser
@@ -29,11 +29,12 @@ class InvestorAuthUserCreationForm(UserCreationForm):
             'phone_number', 'address', 'password1', 'password2', 'role',
             'occupation', 'ready_to_invest', 'return_goals', 'projects_done', 'ssn',
         ]
-        
+
     def clean(self):
         cleaned_data = super().clean()
         role = cleaned_data.get('role')
 
+        # Validate role-specific fields
         if role == 'Investor':
             if not cleaned_data.get('ready_to_invest') or not cleaned_data.get('return_goals'):
                 raise forms.ValidationError("Investor-specific fields are required.")
@@ -43,4 +44,5 @@ class InvestorAuthUserCreationForm(UserCreationForm):
         elif role == 'Dual':
             if not cleaned_data.get('ssn'):
                 raise forms.ValidationError("SSN is required for Dual users.")
+
         return cleaned_data
