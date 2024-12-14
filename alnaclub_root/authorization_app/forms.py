@@ -30,19 +30,20 @@ class InvestorAuthUserCreationForm(UserCreationForm):
             'occupation', 'ready_to_invest', 'return_goals', 'projects_done', 'ssn',
         ]
 
-    def clean(self):
-        cleaned_data = super().clean()
-        role = cleaned_data.get('role')
+def clean(self):
+    cleaned_data = super().clean()
+    role = cleaned_data.get('role')
 
-        # Validate role-specific fields
-        if role == 'Investor':
-            if not cleaned_data.get('ready_to_invest') or not cleaned_data.get('return_goals'):
-                raise forms.ValidationError("Investor-specific fields are required.")
-        elif role == 'Developer':
-            if not cleaned_data.get('projects_done'):
-                raise forms.ValidationError("Developer-specific fields are required.")
-        elif role == 'Dual':
-            if not cleaned_data.get('ssn'):
-                raise forms.ValidationError("SSN is required for Dual users.")
+    # Role-specific validations
+    if role == 'Investor':
+        if not cleaned_data.get('ready_to_invest') or not cleaned_data.get('return_goals'):
+            self.add_error('ready_to_invest', "This field is required for Investors.")
+            self.add_error('return_goals', "This field is required for Investors.")
+    elif role == 'Developer':
+        if not cleaned_data.get('projects_done'):
+            self.add_error('projects_done', "This field is required for Developers.")
+    elif role == 'Dual':
+        if not cleaned_data.get('ssn'):
+            self.add_error('ssn', "This field is required for Dual users.")
 
-        return cleaned_data
+    return cleaned_data

@@ -112,6 +112,10 @@
         }
     }
 
+    // Ensure fields are toggled on page load
+    document.addEventListener('DOMContentLoaded', toggleFields);
+
+    // Add event listener for role changes
     document.getElementById('id_role').addEventListener('change', toggleFields);
 </script>
 {% endblock %}

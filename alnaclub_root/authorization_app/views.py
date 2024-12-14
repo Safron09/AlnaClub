@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import InvestorAuthUserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
+from django.http import HttpResponseForbidden
 
 def register(request):
     if request.method == "POST":
@@ -33,15 +34,19 @@ def register(request):
     return render(request, 'register.html', {'register_form': register_form})
 
 @login_required
-def investor_dashboard(request):
-    return render(request, 'investor_dashboard.html')
+def investors(request):
+    if request.user.role != 'Investor':
+        return HttpResponseForbidden("You are not authorized to view this page.")
+    return render(request, 'investor.html')
 
 # Developer Dashboard View
 @login_required
-def developer_dashboard(request):
-    return render(request, 'developer_dashboard.html')
+def developers(request):
+    if request.user.role != 'Developer':
+        return HttpResponseForbidden("You are not authorized to view this page.")
+    return render(request, 'developers.html')
 
 # Dual Dashboard View
 @login_required
 def dual_dashboard(request):
-    return render(request, 'dual_dashboard.html')
+    return render(request, 'base.html')

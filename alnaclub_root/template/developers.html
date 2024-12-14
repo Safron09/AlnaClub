@@ -3,6 +3,7 @@
 {% block title %}Developers{% endblock %}
 
 {% block content %}
-    <h1>Developers Page</h1>
-    <p>This is the developers page.</p>
+    <h2>Welcome, {{ user.name }}</h2>
+    <p><strong>Role:</strong> {{ user.role }}</p>
+    <p><strong>Projects Completed:</strong> {{ user.projects_done }}</p>
 {% endblock %}
