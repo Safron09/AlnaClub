@@ -54,7 +54,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
             'DIRS': [
-        os.path.join(BASE_DIR, 'template'),  # Add the directory where 'base.html' exists
+        os.path.join(BASE_DIR, 'template'), # Add the directory where 'base.html' exists
+        os.path.join(BASE_DIR, 'authorization_app', 'templates'),  
         ],
         'APP_DIRS': True,
         'OPTIONS': {

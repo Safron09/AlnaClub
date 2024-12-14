@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import InvestorAuthUserCreationForm
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
 
 def register(request):
@@ -17,9 +18,9 @@ def register(request):
             
             # Redirect based on the user's role
             if user.role == 'Investor':
-                return redirect('home')
+                return redirect('investors')
             elif user.role == 'Developer':
-                return redirect('home')
+                return redirect('developers')
             elif user.role == 'Dual':
                 return redirect('home')
         else:
@@ -30,3 +31,17 @@ def register(request):
         register_form = InvestorAuthUserCreationForm()
     
     return render(request, 'register.html', {'register_form': register_form})
+
+@login_required
+def investor_dashboard(request):
+    return render(request, 'investor_dashboard.html')
+
+# Developer Dashboard View
+@login_required
+def developer_dashboard(request):
+    return render(request, 'developer_dashboard.html')
+
+# Dual Dashboard View
+@login_required
+def dual_dashboard(request):
+    return render(request, 'dual_dashboard.html')
