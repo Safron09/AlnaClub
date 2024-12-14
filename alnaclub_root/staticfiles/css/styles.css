@@ -95,3 +95,48 @@ body {
     color: #e0e0e0; /* Ensure content text is light gray */
 }
 
+/* Input Field Styling for Login and Registration */
+.custom-input {
+    width: 100%;
+    height: 50px;
+    background-color: #f0f0f0; /* Light gray background */
+    color: black; /* Black text */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px;
+    font-size: 1.2rem; /* Adjust text size */
+}
+
+.custom-input:focus {
+    background-color: white;
+    border: 2px solid #f7c948; /* Golden focus border */
+    outline: none; /* Remove default focus outline */
+}
+
+/* Login Button Styling */
+.btn-custom {
+    background-color: #f7c948; /* Golden button */
+    color: black;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.btn-custom:hover {
+    background-color: white; /* White on hover */
+    color: black;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Golden Link Styling */
+.text-golden {
+    color: #f7c948;
+    text-decoration: none;
+}
+
+.text-golden:hover {
+    text-decoration: underline;
+}

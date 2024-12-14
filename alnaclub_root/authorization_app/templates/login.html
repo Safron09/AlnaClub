@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-center mb-4">Login Page</h1>
+    <form method="post">
+        {% csrf_token %}
+        <!-- Render Login Form -->
+        <div class="mb-3">
+            <label for="id_username" class="form-label">Username</label>
+            <input type="text" id="id_username" name="username" class="form-control custom-input" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="id_password" class="form-label">Password</label>
+            <input type="password" id="id_password" name="password" class="form-control custom-input" required>
+        </div>
+
+        <button type="submit" class="btn btn-custom mt-3">Login</button>
+    </form>
+
+    <!-- Redirect to Registration -->
+    <p class="text-center mt-3">
+        Don't have an account? <a href="{% url 'register' %}" class="text-golden">Sign Up</a>
+    </p>
+</div>
+{% endblock %}

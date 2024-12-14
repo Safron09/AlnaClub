@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from .forms import InvestorAuthUserCreationForm
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
+from django.http import HttpResponseForbidden
 
 def register(request):
     if request.method == "POST":
@@ -17,9 +19,9 @@ def register(request):
             
             # Redirect based on the user's role
             if user.role == 'Investor':
-                return redirect('home')
+                return redirect('investors')
             elif user.role == 'Developer':
-                return redirect('home')
+                return redirect('developers')
             elif user.role == 'Dual':
                 return redirect('home')
         else:
@@ -30,3 +32,21 @@ def register(request):
         register_form = InvestorAuthUserCreationForm()
     
     return render(request, 'register.html', {'register_form': register_form})
+
+@login_required
+def investors(request):
+    if request.user.role != 'Investor':
+        return HttpResponseForbidden("You are not authorized to view this page.")
+    return render(request, 'investor.html')
+
+# Developer Dashboard View
+@login_required
+def developers(request):
+    if request.user.role != 'Developer':
+        return HttpResponseForbidden("You are not authorized to view this page.")
+    return render(request, 'developers.html')
+
+# Dual Dashboard View
+@login_required
+def dual_dashboard(request):
+    return render(request, 'base.html')
