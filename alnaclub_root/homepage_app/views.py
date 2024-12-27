@@ -3,11 +3,11 @@ from django.shortcuts import render
 def home(request):
     return render(request, 'base.html')
 
-def developers(request):
-    return render(request, 'developers.html')
+# def developers(request):
+#     return render(request, 'developers.html')
 
-def investors(request):
-    return render(request, 'investors.html')
+# def investors(request):
+#     return render(request, 'investors.html')
 
 def how_it_works(request):
     return render(request, 'how_it_works.html')
