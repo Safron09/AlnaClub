@@ -31,13 +31,13 @@ def register(request):
     else:
         register_form = InvestorAuthUserCreationForm()
     
-    return render(request, 'register.html', {'register_form': register_form})
+    return render(request, 'auth/register.html', {'register_form': register_form})
 
 @login_required
 def investors(request):
     if request.user.role != 'Investor':
         return HttpResponseForbidden("You are not authorized to view this page.")
-    return render(request, 'investor.html')
+    return render(request, 'investors_app/investor.html')
 
 # Developer Dashboard View
 @login_required
