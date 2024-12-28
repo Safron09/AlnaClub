@@ -1,97 +1,45 @@
-/* Sticky Footer Layout (Ensures Footer at Bottom) */
-html, body {
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-body {
-    margin: 0;
-}
-footer {
-    margin-top: auto; /* Push footer to the bottom */
+/* Subscription Widget Styling */
+.subscription-widget {
+    background-color: black;
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    max-width: 500px;
+    margin: 0 auto;
 }
 
-
-/* Navigation Bar (Header) Styles */
-.navbar {
-    background-color: #000; /* Black navbar background */
+.subscription-widget h2 {
+    color: gold;
+    margin-bottom: 10px;
 }
 
-/* Navbar Brand Styles */
-.navbar-brand {
-    font-family: 'Poppins', sans-serif; /* Custom font */
-    font-weight: bold; /* Make it bold */
-    font-size: 1.5rem; /* Adjust size */
-    color: #f7c948; /* Golden color */
-    text-transform: uppercase; /* Optional: Make it uppercase */
-    text-decoration: none; /* Remove underline */
-}
-.navbar-brand:hover {
-    color: white; /* Change to white on hover */
-    transition: color 0.3s ease;
+.subscription-widget .form-control {
+    border-radius: 30px 0 0 30px;
+    padding: 10px;
 }
 
-/* Navbar Links Styles */
-.navbar-nav .nav-link {
-    color: white; /* Default white link color */
-    text-decoration: none;
-}
-.navbar-nav .nav-link:hover {
-    color: #f7c948; /* Golden color on hover */
-    transition: color 0.3s ease;
-}
-
-/* Button Styles */
-.btn-custom {
-    background-color: #f7c948; /* Default golden button color */
-    color: black; /* Black text */
+.subscription-widget .btn-warning {
+    border-radius: 0 30px 30px 0;
     font-weight: bold;
-    border: none; /* Remove border */
-}
-.btn-custom:hover {
-    background-color: white; /* Change to white on hover */
-    color: black; /* Ensure text remains visible */
-    transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 10px 20px;
 }
 
-/* General Footer Styles */
-footer {
-    color: #e0e0e0; /* Light gray text */
-    background-color: #111; /* Dark background */
-}
-footer h5, footer h6 {
-    color: #f7c948; /* Golden headings */
-}
-
-
-/* Footer Link Styles */
-footer a {
-    color: #e0e0e0; /* Default light gray color */
-    text-decoration: none;
-}
-footer a:hover {
-    color: #f7c948; /* Golden color on hover */
-    text-decoration: underline; /* Optional: underline for better visibility */
-    transition: color 0.3s ease;
+/* Alert Messages Styling */
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px; /* Added for spacing below the form */
 }
 
-/* Social Media Icon Styles */
-.bi {
-    font-size: 1.5rem; /* Social media icon size */
-    color: black; /* Default icon color */
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px; /* Added for spacing below the form */
 }
-.bi:hover {
-    color: white; /* White hover effect for icons */
-    transition: color 0.3s ease;
-}
-
-/* Global Page Background and Text Color */
-body {
-    background-color: #000; /* Black background for all pages */
-    color: #e0e0e0; /* Light gray text for readability */
-}
-
-.container {
-    color: #e0e0e0; /* Ensure content text is light gray */
-}
-

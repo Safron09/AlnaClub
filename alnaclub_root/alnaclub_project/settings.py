@@ -64,6 +64,7 @@ TEMPLATES = [
         os.path.join(BASE_DIR, 'developers_app', 'templates'),
         os.path.join(BASE_DIR, 'company_app', 'templates'),
         os.path.join(BASE_DIR, 'legal_app', 'templates'),
+        os.path.join(BASE_DIR, 'homepage_app', 'templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -152,7 +153,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'investors_app/static'),
     os.path.join(BASE_DIR, 'developers_app/static'),
     os.path.join(BASE_DIR, 'company_app/static'),
-    os.path.join(BASE_DIR, 'company_app/static'),
+    os.path.join(BASE_DIR, 'legal_app/static'),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 LOGIN_REDIRECT_URL = '/'
