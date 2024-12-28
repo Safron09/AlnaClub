@@ -15,23 +15,23 @@ def how_it_works(request):
 def faq(request):
     return render(request, 'faq.html')
 
-def signup(request):
-    return render(request, 'signup.html')
+# def signup(request):
+#     return render(request, 'signup.html')
 
-def login(request):
-    return render(request, 'login.html')
+# def login(request):
+#     return render(request, 'login.html')
 
-def our_story(request):
-    return render(request, 'our_story.html')
+# def our_story(request):
+#     return render(request, 'our_story.html')
 
-def team(request):
-    return render(request, 'team.html')
+# def team(request):
+#     return render(request, 'team.html')
 
-def contact_us(request):
-    return render(request, 'contact_us.html')
+# def contact_us(request):
+#     return render(request, 'contact_us.html')
 
-def terms_of_service(request):
-    return render(request, 'terms_of_service.html')
+# def terms_of_service(request):
+#     return render(request, 'terms_of_service.html')
 
-def privacy_policy(request):
-    return render(request, 'privacy_policy.html')
+# def privacy_policy(request):
+#     return render(request, 'privacy_policy.html')

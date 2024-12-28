@@ -10,4 +10,6 @@ urlpatterns = [
     path('auth/', include('authorization_app.urls')),  # Authorization app URLs
     path('investors/', include('investors_app.urls')),
     path('developers/', include('developers_app.urls')),
+    path('company/', include('company_app.urls')),
+    path('legal/', include('legal_app.urls')),
 ]

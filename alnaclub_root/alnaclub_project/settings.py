@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     'authorization_app',
     'investors_app',
     'developers_app',
+    'company_app',
+    'legal_app',
     'crispy_forms',
     'crispy_bootstrap5',
 ]
@@ -60,6 +62,8 @@ TEMPLATES = [
         os.path.join(BASE_DIR, 'authorization_app', 'templates'), 
         os.path.join(BASE_DIR, 'investors_app', 'templates'),
         os.path.join(BASE_DIR, 'developers_app', 'templates'),
+        os.path.join(BASE_DIR, 'company_app', 'templates'),
+        os.path.join(BASE_DIR, 'legal_app', 'templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -146,7 +150,9 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'homepage_app/static'),
     os.path.join(BASE_DIR, 'authorization_app/static'),
     os.path.join(BASE_DIR, 'investors_app/static'),
-    os.path.join(BASE_DIR, 'developers_app/static')
+    os.path.join(BASE_DIR, 'developers_app/static'),
+    os.path.join(BASE_DIR, 'company_app/static'),
+    os.path.join(BASE_DIR, 'company_app/static'),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 LOGIN_REDIRECT_URL = '/'
