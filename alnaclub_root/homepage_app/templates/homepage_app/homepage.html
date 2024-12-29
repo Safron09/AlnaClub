@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container text-center my-10">
+    <!-- Main Homepage Content -->
+    <h1>Welcome to ALNA CLUB</h1>
+    <p>Alex Doofus</p>
+
+    <!-- Subscription Widget -->
+    <div class="d-flex flex-column align-items-center justify-content-center text-center mt-8" style="background-color: black; color: white; padding: 30px; border-radius: 10px; max-width: 500px; margin: 0 auto;">
+        <h1 class="display-6">
+            <span style="color: gold;">ALNA CLUB</span> Investment
+        </h1>
+        <p>Welcome to ALNA CLUB - a membership based real estate investment platform</p>
+        <p>Join our email list if you are interested in our updates.</p>
+
+        <form method="POST" action="{% url 'home' %}" style="width: 100%;">
+            {% csrf_token %}
+            <div class="input-group">
+                <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
+                <button class="btn btn-warning" type="submit">Sign up</button>
+            </div>
+            <!-- Display Success or Error Messages -->
+            {% if message %}
+            <div class="mt-3 alert {% if message_type == 'success' %}alert-success{% else %}alert-danger{% endif %}">
+                {{ message }}
+            </div>
+            {% endif %}
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,13 +1,13 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.http import JsonResponse
+from .models import Subscriber
+
 
 def home(request):
     return render(request, 'base.html')
 
-# def developers(request):
-#     return render(request, 'developers.html')
-
-# def investors(request):
-#     return render(request, 'investors.html')
+def home(request):
+    return render(request, 'homepage_app/homepage.html')
 
 def how_it_works(request):
     return render(request, 'how_it_works.html')
@@ -15,23 +15,25 @@ def how_it_works(request):
 def faq(request):
     return render(request, 'faq.html')
 
-# def signup(request):
-#     return render(request, 'signup.html')
+def home(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        if email:
+            if not Subscriber.objects.filter(email=email).exists():  # Check for duplicate email
+                Subscriber.objects.create(email=email)
+                return render(request, 'homepage_app/homepage.html', {
+                    'message': 'Subscription successful!',
+                    'message_type': 'success'
+                })
+            else:
+                return render(request, 'homepage_app/homepage.html', {
+                    'message': 'This email is already subscribed.',
+                    'message_type': 'error'
+                })
+        else:
+            return render(request, 'homepage_app/homepage.html', {
+                'message': 'Invalid email. Please try again.',
+                'message_type': 'error'
+            })
 
-# def login(request):
-#     return render(request, 'login.html')
-
-# def our_story(request):
-#     return render(request, 'our_story.html')
-
-# def team(request):
-#     return render(request, 'team.html')
-
-# def contact_us(request):
-#     return render(request, 'contact_us.html')
-
-# def terms_of_service(request):
-#     return render(request, 'terms_of_service.html')
-
-# def privacy_policy(request):
-#     return render(request, 'privacy_policy.html')
+    return render(request, 'homepage_app/homepage.html')
