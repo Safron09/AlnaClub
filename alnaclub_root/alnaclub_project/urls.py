@@ -1,10 +1,15 @@
 from django.contrib import admin
 from django.urls import path, include
-
+from homepage_app.views import home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    
-    path('', include('landing_page.url')), # Connect the landing_page app
-    path('', include('authorization_app.urls')),
+    path('', home, name='home'),
+
+    path('', include('homepage_app.url')),  # Landing page URLs
+    path('auth/', include('authorization_app.urls')),  # Authorization app URLs
+    path('investors/', include('investors_app.urls')),
+    path('developers/', include('developers_app.urls')),
+    path('company/', include('company_app.urls')),
+    path('legal/', include('legal_app.urls')),
 ]

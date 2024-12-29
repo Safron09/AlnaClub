@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}Investors{% endblock %}
+
+{% block content %}
+    <h2>Welcome, {{ user.name }}</h2>
+    <p><strong>Role:</strong> {{ user.role }}</p>
+    <p><strong>Ready to Invest:</strong> {{ user.ready_to_invest }}</p>
+    <p><strong>Return Goals:</strong> {{ user.return_goals }}</p>
+{% endblock %}

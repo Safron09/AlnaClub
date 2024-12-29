@@ -31,8 +31,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'landing_page',
+    'homepage_app',
     'authorization_app',
+    'investors_app',
+    'developers_app',
+    'company_app',
+    'legal_app',
     'crispy_forms',
     'crispy_bootstrap5',
 ]
@@ -54,7 +58,13 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
             'DIRS': [
-        os.path.join(BASE_DIR, 'template'),  # Add the directory where 'base.html' exists
+        os.path.join(BASE_DIR, 'template'), # Add the directory where 'base.html' exists
+        os.path.join(BASE_DIR, 'authorization_app', 'templates'), 
+        os.path.join(BASE_DIR, 'investors_app', 'templates'),
+        os.path.join(BASE_DIR, 'developers_app', 'templates'),
+        os.path.join(BASE_DIR, 'company_app', 'templates'),
+        os.path.join(BASE_DIR, 'legal_app', 'templates'),
+        os.path.join(BASE_DIR, 'homepage_app', 'templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -138,10 +148,17 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'landing_page/static'),
-    os.path.join(BASE_DIR, 'authorization_app/static'),
+    os.path.join(BASE_DIR, 'homepage_app/static/homepage/css'),
+    os.path.join(BASE_DIR, 'authorization_app/static/auth/css'),
+    os.path.join(BASE_DIR, 'investors_app/static'),
+    os.path.join(BASE_DIR, 'developers_app/static'),
+    os.path.join(BASE_DIR, 'company_app/static'),
+    os.path.join(BASE_DIR, 'legal_app/static'),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
