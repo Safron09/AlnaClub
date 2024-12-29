@@ -1,0 +1,45 @@
+/* Subscription Widget Styling */
+.subscription-widget {
+    background-color: black;
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.subscription-widget h2 {
+    color: gold;
+    margin-bottom: 10px;
+}
+
+.subscription-widget .form-control {
+    border-radius: 30px 0 0 30px;
+    padding: 10px;
+}
+
+.subscription-widget .btn-warning {
+    border-radius: 0 30px 30px 0;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+/* Alert Messages Styling */
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px; /* Added for spacing below the form */
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px; /* Added for spacing below the form */
+}
