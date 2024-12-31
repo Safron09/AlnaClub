@@ -7,6 +7,8 @@ yura yura12345
 
 1. Fill Homepage
 2. Add messages for Login, Logout, Registration.
+4. Username name next to Logout button an who logged in.
 6. URL restriction for logged in users
-6.1 Favicon path
 7. From the homepage emails add Automatic email delivery.
+8. Enchance code for the register.html by looping throuh common elements
+9. Register.html role selected dropdown starts with an empty line

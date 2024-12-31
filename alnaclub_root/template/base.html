@@ -31,7 +31,7 @@
             </a>
             <!-- Hamburger Menu for Small Devices -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon text-golden"></span>
+                <span class="navbar-toggler-icon"></span>
             </button>
             <!-- Navigation Links -->
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -74,8 +74,8 @@
                     </form>
                 {% else %}
                     <!-- Show Sign Up and Login buttons for unauthenticated users -->
-                    <a href="{% url 'register' %}" class="btn btn-auth">Sign Up</a>
-                    <a href="{% url 'login' %}" class="btn btn-auth">Login</a>
+                    <a href="{% url 'register' %}" class="btn btn-auth me-2">Sign Up</a>
+                    <a href="{% url 'login' %}" class="btn btn-auth me-2">Login</a>
                 {% endif %}
             </div>
         </div>
