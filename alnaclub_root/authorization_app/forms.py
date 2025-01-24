@@ -4,6 +4,7 @@ from .models import InvestorAuthUser
 
 class InvestorAuthUserCreationForm(UserCreationForm):
     ROLE_CHOICES = [
+        ('', 'Select Role'),
         ('Investor', 'Investor'),
         ('Developer', 'Developer'),
         ('Dual', 'Dual'),
@@ -35,7 +36,9 @@ def clean(self):
     role = cleaned_data.get('role')
 
     # Role-specific validations
-    if role == 'Investor':
+    if role == '':
+        self.add_error('role', "Please select a valid role.")
+    elif role == 'Investor':
         if not cleaned_data.get('ready_to_invest') or not cleaned_data.get('return_goals'):
             self.add_error('ready_to_invest', "This field is required for Investors.")
             self.add_error('return_goals', "This field is required for Investors.")

@@ -3,12 +3,13 @@ from django.db import models
 
 class InvestorAuthUser(AbstractUser):
     ROLE_CHOICES = [
+        ('', 'Select Role'),
         ('Investor', 'Investor'),
         ('Developer', 'Developer'),
         ('Dual', 'Dual'),
     ]
 
-    role = models.CharField(max_length=10, choices=ROLE_CHOICES, default='Investor')
+    role = models.CharField(max_length=10, choices=ROLE_CHOICES, default='', blank=True)
     name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
     company_name = models.CharField(max_length=255, blank=True, null=True)

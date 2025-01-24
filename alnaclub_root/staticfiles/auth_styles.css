@@ -35,19 +35,3 @@ textarea.custom-input {
 }
 
 /* Button Styling */
-.btn-custom {
-    background-color: #f7c948;
-    color: #000;
-    font-weight: bold;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-}
-
-.btn-custom:hover {
-    background-color: #e5b93d;
-    color: #000;
-    border: none;
-}
