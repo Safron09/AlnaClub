@@ -13,3 +13,4 @@ yura yura12345
 7. From the homepage emails add Automatic email delivery.
 8. Enchance code for the register.html by looping throuh common elements
 9. Register.html role selected dropdown starts with an empty line
+10 __str__() models for better representation of object and debug
