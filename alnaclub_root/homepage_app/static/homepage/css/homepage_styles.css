@@ -43,3 +43,16 @@
     padding: 10px;
     margin-top: 10px; /* Added for spacing below the form */
 }
+
+/* Image Rotation */
+/* Carousel Image Cropping */
+.custom-carousel-image {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Adjust to fit your layout */
+    margin: 0 auto;
+    aspect-ratio: 16/9; /* Maintain a 16:9 aspect ratio */
+    overflow: hidden;
+    background-color: transparent; /* Transparent background */
+    border-radius: 15px;
+}

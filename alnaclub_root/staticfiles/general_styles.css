@@ -4,13 +4,10 @@ html, body {
     display: flex;
     flex-direction: column;
 }
-body {
-    margin: 0;
-}
+
 footer {
     margin-top: auto; /* Push footer to the bottom */
 }
-
 
 /* Navigation Bar (Header) Styles */
 .navbar {
@@ -41,19 +38,6 @@ footer {
     transition: color 0.3s ease;
 }
 
-/* Button Styles */
-.btn-custom {
-    background-color: #f7c948; /* Default golden button color */
-    color: black; /* Black text */
-    font-weight: bold;
-    border: none; /* Remove border */
-}
-.btn-custom:hover {
-    background-color: white; /* Change to white on hover */
-    color: black; /* Ensure text remains visible */
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
 /* General Footer Styles */
 footer {
     color: #e0e0e0; /* Light gray text */
@@ -62,7 +46,6 @@ footer {
 footer h5, footer h6 {
     color: #f7c948; /* Golden headings */
 }
-
 
 /* Footer Link Styles */
 footer a {
@@ -87,10 +70,14 @@ footer a:hover {
 
 /* Global Page Background and Text Color */
 body {
-    background-color: #000; /* Black background for all pages */
+    background-color: #1c1a1ae8; /* Black background for all pages */
     color: #e0e0e0; /* Light gray text for readability */
 }
-
+.navbar-logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
 .container {
     color: #e0e0e0; /* Ensure content text is light gray */
 }
@@ -136,7 +123,65 @@ body {
     color: #f7c948;
     text-decoration: none;
 }
-
 .text-golden:hover {
     text-decoration: underline;
 }
+
+.bg-golden {
+    background-color: #f7c948;
+}
+.text-black {
+    color: black;
+}
+
+.bg-black {
+    background-color: #111;
+}
+.text-gray-light {
+    color: #e0e0e0;
+}
+.social-icon {
+    font-size: 1.5rem;
+    color: black;
+}
+.social-icon:hover {
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.text-style {
+    color: #f7c848a2;
+}
+
+/* Common Styles for Sign Up, Logout, and Login Buttons */
+.btn-auth {
+    background-color: #f7c848a2; /* Default golden color */
+    color: black; /* Black text */
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.btn-auth:hover {
+    background-color: rgb(246, 228, 69); /* White background on hover */
+    color: black; /* Keep black text */
+}
+
+.btn-auth:active, .btn-auth:focus {
+    outline: none;
+    background-color: #e0c937; /* Slightly darker golden color */
+}
+/* Default Hamburger Icon (Golden Color) */
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgb(238, 188, 8)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Change Hover Effect (Optional) */
+.navbar-toggler:hover .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgb(255, 223, 0)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
