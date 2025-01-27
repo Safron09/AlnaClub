@@ -185,3 +185,17 @@ body {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgb(255, 223, 0)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
+/* Custom Golden Button */
+.btn-golden {
+    background-color: #f5f3f0;
+    color: black;
+    border: none;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Optional shadow */
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-golden:hover {
+    background-color: rgb(124, 124, 121);
+    transform: scale(1.1); /* Slight zoom effect */
+    color: black; /* Keep black text */
+}

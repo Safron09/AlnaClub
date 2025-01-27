@@ -14,3 +14,5 @@ yura yura12345
 8. Enchance code for the register.html by looping throuh common elements
 9. Register.html role selected dropdown starts with an empty line
 10 __str__() models for better representation of object and debug
+11. Sanitize and Protect Forms.py from SQL and CSRF attacks
+12. Forms.py User Friendly error messags. Log Errors to a specific log file

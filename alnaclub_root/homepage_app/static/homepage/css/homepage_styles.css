@@ -56,3 +56,64 @@
     background-color: transparent; /* Transparent background */
     border-radius: 15px;
 }
+
+/* Middle section text */
+.placeholder-section {
+    color: white;
+    background-color: transparent;
+    padding: 40px 20px;
+    border-radius: 15px;
+    margin-top: 30px;
+}
+
+.placeholder-section h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.placeholder-section .text-highlight {
+    color: #B68C22;
+}
+
+.placeholder-section p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+.placeholder-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.placeholder-card {
+    text-align: justify;
+    background-color: transparent;
+    border: 1px solid #B68C22;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.placeholder-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.placeholder-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #B68C22;
+}
+
+.placeholder-card p {
+    font-size: 0.9rem;
+    color: #dddddd;
+}
+
+.textalna {
+    color: #8f2323;
+    font-weight: bold;
+}
