@@ -113,7 +113,38 @@
     color: #dddddd;
 }
 
-.textalna {
-    color: #8f2323;
+/* Header for the reviews section */
+.reviews-header {
+    font-size: 2rem;
     font-weight: bold;
+    color: #B68C22;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Review card styling */
+.placeholder-card {
+    text-align: justify;
+    background-color: transparent;
+    border: 1px solid #B68C22;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px auto;
+    max-width: 600px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Blockquote customization */
+.placeholder-card blockquote {
+    font-style: italic;
+    font-size: 1.1rem;
+    margin: 0;
+    color: #ffffff;
+}
+
+.placeholder-card footer {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #dddddd;
+    text-align: right;
 }

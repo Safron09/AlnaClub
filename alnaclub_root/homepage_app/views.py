@@ -37,3 +37,15 @@ def home(request):
             })
 
     return render(request, 'homepage_app/homepage.html')
+
+def home(request):
+    reviews = []  # Initialize an empty list for reviews
+    with open('reviews.txt', 'r') as file:
+        for line in file:
+            text, source = line.rsplit('-', 1)  # Split each line into text and source (e.g., "Review text - John Doe")
+            reviews.append({'text': text.strip('" '), 'source': source.strip()})  # Add review dict to the list
+
+    context = {
+        'reviews': reviews,  # Pass reviews to the template
+    }
+    return render(request, 'homepage_app/homepage.html', context)

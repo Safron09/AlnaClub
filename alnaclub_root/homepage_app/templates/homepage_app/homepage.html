@@ -75,6 +75,24 @@
             </div>
         </div>
     </div>
- 
+        <!-- Reviews Section -->
+        <div class="reviews-section text-center my-5">
+            <h2 class="reviews-header">What Our Users Are Saying</h2>
+            <div id="ReviewsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                <div class="carousel-inner">
+                    {% for review in reviews %}
+                    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                        <div class="review-card">
+                            <blockquote>
+                                <p class="review-comment">"{{ review.text }}"</p>
+                                <span class="review-source">{{ review.source }}</span>
+                            </blockquote>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
 </div>
 {% endblock %}

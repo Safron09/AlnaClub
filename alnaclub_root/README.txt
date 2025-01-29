@@ -16,3 +16,5 @@ yura yura12345
 10 __str__() models for better representation of object and debug
 11. Sanitize and Protect Forms.py from SQL and CSRF attacks
 12. Forms.py User Friendly error messags. Log Errors to a specific log file
+13. Protection from creating/registrating user duplicates. 
+14. Add Map Use OpenStreetMap + Leaflet.js (100% free)
