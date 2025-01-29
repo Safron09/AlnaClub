@@ -44,7 +44,7 @@ def investors(request):
 def developers(request):
     if request.user.role != 'Developer':
         return HttpResponseForbidden("You are not authorized to view this page.")
-    return render(request, 'developers.html')
+    return render(request, 'developers_app/developers.html')
 
 # Dual Dashboard View
 @login_required

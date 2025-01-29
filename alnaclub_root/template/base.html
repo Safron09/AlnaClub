@@ -137,3 +137,33 @@
             </div>
         </div>
     </footer>
+    <!-- Scroll to Top Button -->
+    <a href="#" id="scrollTopBtn" class="btn-golden position-fixed rounded-circle" role="button" style="display: none; bottom: 70px; right: 20px;">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+    <script>
+        // Show the button when scrolling down 100px
+        window.onscroll = function () {
+            toggleScrollButton();
+        };
+    
+        function toggleScrollButton() {
+            const scrollTopBtn = document.getElementById("scrollTopBtn");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollTopBtn.style.display = "block"; // Show button
+            } else {
+                scrollTopBtn.style.display = "none"; // Hide button
+            }
+        }
+    
+        // Scroll to the top smoothly
+        document.getElementById("scrollTopBtn").addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent the default anchor behavior
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth", // Smooth scrolling
+            });
+        });
+    </script>
+</body>
+</html>
