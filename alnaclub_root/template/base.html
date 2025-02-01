@@ -48,26 +48,43 @@
                     </li>
             
                     <!-- Role-specific tabs -->
-                    {% if user.is_authenticated %}
-                        {% if user.role == "Investor" %}
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'investors' %}">Investors</a>
-                            </li>
-                        {% elif user.role == "Developer" %}
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'developers' %}">Developers</a>
-                            </li>
-                        {% elif user.role == "Dual" %}
+                {% if user.is_authenticated %}
+                    <ul class="navbar-nav ms-auto">
+                        <!-- SuperAdmin can see all tabs -->
+                        {% if user.is_superuser %}
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'investors' %}">Investors</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'developers' %}">Developers</a>
                             </li>
+                        {% else %}
+                            <!-- Investors -->
+                            {% if user.role == "Investor" %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'investors' %}">Investors</a>
+                                </li>
+                            {% endif %}
+                
+                            <!-- Developers -->
+                            {% if user.role == "Developer" %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'developers' %}">Developers</a>
+                                </li>
+                            {% endif %}
+                
+                            <!-- Dual Role (Investors and Developers) -->
+                            {% if user.role == "Dual" %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'investors' %}">Investors</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'developers' %}">Developers</a>
+                                </li>
+                            {% endif %}
                         {% endif %}
-                    {% endif %}
-                </ul>
-            
+                    </ul>
+                {% endif %}
                 <!-- Authentication Buttons -->
                 {% if user.is_authenticated %}
                     <!-- Show Logout button for logged-in users -->

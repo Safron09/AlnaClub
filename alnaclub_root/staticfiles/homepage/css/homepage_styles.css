@@ -113,38 +113,47 @@
     color: #dddddd;
 }
 
-/* Header for the reviews section */
+/* ALNA Reviews Header Styling */
 .reviews-header {
     font-size: 2rem;
     font-weight: bold;
-    color: #B68C22;
-    margin-bottom: 20px;
+    color: #fbfbfb;
+    margin-bottom: 30px;
     text-transform: uppercase;
 }
 
-/* Review card styling */
-.placeholder-card {
-    text-align: justify;
+/* ALNA Review Card Styling */
+.review-card {
     background-color: transparent;
     border: 1px solid #B68C22;
     border-radius: 10px;
-    padding: 20px;
-    margin: 10px auto;
-    max-width: 600px;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 800px; /* Adjust to control the width */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
 }
 
-/* Blockquote customization */
-.placeholder-card blockquote {
-    font-style: italic;
-    font-size: 1.1rem;
-    margin: 0;
-    color: #ffffff;
+.review-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(255, 215, 0, 0.3);
 }
 
-.placeholder-card footer {
-    margin-top: 10px;
-    font-size: 0.9rem;
+/* ALNA Review Comment Styling */
+.review-comment {
+    font-size: 1.6rem; /* Slightly larger font for emphasis */
+    font-style: italic; /* Makes the text italic */
+    font-weight: 400; /* Use a lighter weight for elegance */
+    color: #B68C22; /* White color for contrast */
+    margin-bottom: 15px; /* Add spacing below the comment */
+    line-height: 1.8; /* Improve readability with line spacing */
+    letter-spacing: 0.5px; /* Add subtle letter spacing for a refined look */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Add a soft text shadow for depth */
+}
+/* ALNA Review Source Styling */
+.review-source {
+    all: unset; /* Reset all default styles */
+    font-size: 1rem; /* Add back desired styles */
     color: #dddddd;
-    text-align: right;
+    display: inline; /* Prevent block-level behavior */
 }

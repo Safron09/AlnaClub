@@ -5,6 +5,7 @@ python manage.py collectstatic
 python manage.py makemigrations
 yura yura12345
 
+
 1. Fill Homepage
 2. Add messages for Login, Logout, Registration.
 4. Username name next to Logout button an who logged in.

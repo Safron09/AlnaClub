@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>SuperAdmin Dashboard - Pending Projects</h2>
+
+{% if pending_projects %}
+<table border="1">
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Developer</th>
+        <th>Actions</th>
+    </tr>
+    {% for project in pending_projects %}
+    <tr>
+        <td>{{ project.title }}</td>
+        <td>{{ project.description }}</td>
+        <td>{{ project.developer.username }}</td>
+        <td>
+            <form action="{% url 'approve_project' project.id %}" method="POST">
+                {% csrf_token %}
+                <button type="submit">Approve</button>
+            </form>
+            <form action="{% url 'reject_project' project.id %}" method="POST">
+                {% csrf_token %}
+                <button type="submit">Reject</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>No pending projects.</p>
+{% endif %}
+
+{% endblock %}

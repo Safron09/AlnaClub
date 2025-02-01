@@ -1,5 +1,6 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.core.exceptions import ValidationError
 from .models import InvestorAuthUser
 
 class InvestorAuthUserCreationForm(UserCreationForm):
@@ -50,3 +51,22 @@ def clean(self):
             self.add_error('ssn', "This field is required for Dual users.")
 
     return cleaned_data
+
+class CustomAuthenticationForm(AuthenticationForm):
+    def confirm_login_allowed(self, user):
+        # Debugging output
+        print(f"Debug: User - {user.username}, Superuser - {user.is_superuser}, Role - {getattr(user, 'role', None)}")
+
+        # Allow SuperAdmins unconditionally
+        if user.is_superuser:
+            return
+
+        # Allow users with valid roles
+        if user.role in ['Investor', 'Developer', 'Dual']:
+            return
+
+        # Deny users without valid roles
+        raise ValidationError(
+            "Your account does not have a valid role. Please contact support.",
+            code='invalid_login'
+        )
